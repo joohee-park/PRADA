@@ -1,0 +1,337 @@
+@charset 'utf-8';
+@import url(https://fonts.googleapis.com/css?family=Forum);
+@import url(https://fonts.googleapis.com/css?family=Monoton);
+@import url(font-awesome.min.css);
+@import url(normalize.css);
+
+body {
+ font: 20px/1 Forum;
+ color: #222
+}
+
+body {
+ background: #111;
+ position: fixed
+}
+
+.bg {
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ z-index: -1
+}
+
+.bg video {
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto
+}
+
+#logo {
+ position: fixed;
+ left: 20px;
+ top: 50px;
+ cursor: pointer;
+ z-index: 5
+}
+#logo img {
+ width: 130px
+}
+
+header {
+ position: fixed;
+ width: 550px;
+ height: 100%;
+ background-color: #fff;
+ opacity: 0.7;
+ left:-390px;
+ transform: skewX(10deg);
+ transform-origin: left top;
+ box-shadow: 0 3px 5px #111
+}
+
+section {
+ position: fixed;
+ width: ;
+ height: ;
+ top: 200px;
+ right: 100px
+}
+
+aside {
+ position: fixed;
+ width: 300px;
+ height: 100%;
+ bottom: 0;
+ right: -250px;
+ transform-origin: right bottom;
+ background: rgba(0,0,0,0.7);
+ transition: all 1s;
+ z-index: 1
+}
+
+aside .sns {
+ position: fixed;
+ top: 20px;
+ right: -150px;
+ opacity: 0;
+ transition: all 0.9s;
+}
+
+aside .sns a {
+ color: #eee;
+ display: block;
+ float: left;
+ padding: 7px;-147
+ opacity: 0.5;
+ font-size: 20px;
+ transition: all 0.3s
+}
+
+aside:hover .sns {
+ opacity: 1;
+ transform: translate(-188px)
+}
+
+aside .sns a:hover {
+ opacity: 0.95;
+ color: #ccc;
+}
+
+aside:hover {
+ right: -100px;
+ background: rgba(0,0,0,0.9);
+}
+
+aside .inner {}
+aside:hover .inner {
+ left: 100px
+}
+
+/*btn 자동재생 애니메이션 만들기*/
+@keyframes ani {
+ 0% {
+  opacity: 1;
+  right: 0;
+  transform: scale(1)
+ }
+ 100% {
+  opacity: 0;
+  right: 170px;
+  color: #fff;
+  transform: scale(1.6)
+ }
+}
+
+aside .btn {
+ position: absolute;
+ width: 40px;
+ height: 10px;
+ left: 5px;
+ bottom: 50%;
+ transition: all 0.5s
+}
+
+aside:hover .btn {
+ left: -40px;
+ transform: rotateY(180deg);
+ transition: all 0.9s
+}
+
+.btn i {
+ position: absolute;
+ right: 10px;
+ top: 50%;
+ color: #fff;
+ font-size: 70px;
+ opacity: 0.8;
+ transition: all 0.6s
+}
+.btn i:hover {}
+
+/*.inner*/
+aside .inner {}
+
+aside .inner p {
+ position: absolute;
+ width: 150px;
+ height: 100px;
+ left: 17px;
+ bottom: 0;
+}
+aside .inner p:nth-child(1) {
+ top: 150px;
+ transform: translateX(200px);
+ transition: all 0.5s 0s
+}
+aside .inner p:nth-child(2) {
+ top: 330px;
+ transform: translateX(200px);
+ transition: all 0.5s 0.2s
+}
+aside .inner p:nth-child(3) {
+ top: 510px;
+ transform: translateX(200px);
+ transition: all 0.5s 0.4s
+}
+aside:hover .inner p {
+ transform: translateX(0)
+}
+aside .inner p {
+ margin-left: 10px;
+ color: #fff;
+ display: block;
+ font-size: 16px;
+}
+aside .inner p img {
+ width: 100%;
+ opacity: 0.5;
+ margin-top: 15px;
+ transition: all 0.5s
+}
+aside .inner p img:hover {
+ opacity: 1;
+}
+aside .inner p:hover {
+ cursor: pointer;
+}
+/*footer*/
+footer {
+ position: fixed;
+ bottom: 10px;
+ left: 45%
+}
+footer address {
+ color: #eee;
+ font-style: normal;
+ text-shadow: 1px 1px 2px #000;
+ font-size: 16px
+}
+
+/*1depth*/
+#gnb {
+ position: absolute;
+ right: 0;
+ top: 200px;
+ width: 200px;
+ transform: skewX(-10deg);
+}
+#gnb > li {
+ position: relative;
+ right:-10px; /*left:20px*/
+ margin-bottom: 20px;
+ text-align: center
+}
+#gnb > li > a {
+ display: block;
+ width: 100%;
+ line-height: 50px;
+ text-align: left;
+ padding-right: 40px;
+ font-size: 20px;
+/* transform: skewX(-10deg)*/
+}
+
+#gnb b {
+ display: inline-block;
+ }
+
+/*2depth*/
+#gnb ul {
+ position: absolute;
+ left: 200px;
+ top: 0;
+ opacity: 0;
+ transition: all 0.9s;
+ transform: skewX(10deg);
+}
+#gnb > li:hover ul {
+ position: absolute;
+ opacity: 2;
+/* left: 246px;*/
+}
+#gnb ul li {
+ margin-bottom: 2px;
+ opacity: 2;
+ left: 200px
+/* border-left:solid 2px #111*/
+}
+
+#gnb ul a {
+ display: block;
+ background: #fff;
+ color: #111;
+ width: 150px;
+ line-height: 40px;
+ text-align: center;
+ font-size: 0.9em;
+ opacity: 2;
+}
+#gnb ul a b {
+ transform: skewX(-10deg);
+}
+#gnb ul a:hover {
+ background: #807676;
+ color: #fff
+}
+
+#gnb ul li {
+ box-shadow: 2px 2px 5px #111;
+}
+
+#gnb li ul li:nth-child(5) {
+ left: 200px
+}
+
+/*---1---*/
+#gnb li:nth-child(1) ul {
+ left: 160px;
+ opacity: 0;
+ transition: all 0.6s
+}
+#gnb li:nth-child(1):hover ul {
+ left: 165px;
+ opacity: 0.95
+}
+/*---2---*/
+#gnb li:nth-child(2) ul {
+ left: 187px;
+ opacity: 0;
+ transition: all 0.6s
+}
+#gnb li:nth-child(2):hover ul {
+ left: 192px;
+ opacity: 0.95
+}
+/*---3---*/
+#gnb li:nth-child(3) ul {
+ left: 200px;
+ opacity: 0;
+ transition: all 0.6s
+}
+#gnb li:nth-child(3):hover ul {
+ left: 205px;
+ opacity: 0.95
+}
+/*---4---*/
+#gnb li:nth-child(4) ul {
+ left: 200px;
+ opacity: 0;
+ transition: all 0.6s
+}
+#gnb li:nth-child(4):hover ul {
+ left: 206px;
+ opacity: 0.95
+}
+/*---5---*/
+#gnb li:nth-child(5) ul {
+ left: 213px;
+ opacity: 0;
+ transition: all 0.6s
+}
+
+#gnb li:nth-child(5):hover ul {
+ left: 218px;
+ opacity: 0.95
+}
